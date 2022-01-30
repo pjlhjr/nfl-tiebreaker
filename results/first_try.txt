@@ -1,0 +1,59 @@
+The Giants were not, in fact, the NFC's #1 seed in 2020. Nor did the entire NFC East make the playoffs.
+
+2002: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['LV', 'TEN', 'NYJ', 'PIT', 'IND', 'DEN']
+	NFC Playoff Seeds: ['PHI', 'TB', 'GB', 'SF', 'ATL', 'NYG']
+2003: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'BAL', 'DEN', 'IND', 'CIN', 'KC']
+	NFC Playoff Seeds: ['PHI', 'GB', 'SEA', 'CAR', 'LAR', 'MIN']
+2004: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['PIT', 'NE', 'IND', 'LAC', 'HOU', 'JAC']
+	NFC Playoff Seeds: ['PHI', 'ATL', 'GB', 'LAR', 'SEA', 'CAR']
+2005: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['DEN', 'IND', 'NE', 'CIN', 'KC', 'JAC']
+	NFC Playoff Seeds: ['TB', 'WAS', 'SEA', 'MIN', 'CHI', 'CAR']
+2006: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['BAL', 'LAC', 'NYJ', 'TEN', 'NE', 'CIN']
+	NFC Playoff Seeds: ['PHI', 'GB', 'AZ', 'CAR', 'NO', 'CHI']
+2007: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'LAC', 'IND', 'PIT', 'DEN', 'TEN']
+	NFC Playoff Seeds: ['SEA', 'TB', 'DAL', 'GB', 'NO', 'CAR']
+2008: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['PIT', 'LAC', 'NYJ', 'TEN', 'IND', 'BAL']
+	NFC Playoff Seeds: ['NYG', 'CAR', 'AZ', 'GB', 'SF', 'WAS']
+2009: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['LAC', 'IND', 'MIA', 'CIN', 'NE', 'BAL']
+	NFC Playoff Seeds: ['PHI', 'CAR', 'MIN', 'SF', 'GB', 'AZ']
+2010: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'IND', 'PIT', 'LV', 'LAC', 'KC']
+	NFC Playoff Seeds: ['ATL', 'SEA', 'CHI', 'PHI', 'NO', 'TB']
+2011: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'LAC', 'BAL', 'HOU', 'MIA', 'LV']
+	NFC Playoff Seeds: ['SF', 'GB', 'NO', 'PHI', 'NYG', 'AZ']
+2012: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'HOU', 'DEN', 'BAL', 'IND', 'MIA']
+	NFC Playoff Seeds: ['GB', 'LAR', 'CAR', 'WAS', 'MIN', 'SF']
+2013: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['IND', 'NE', 'DEN', 'PIT', 'CIN', 'LAC']
+	NFC Playoff Seeds: ['CAR', 'SF', 'DET', 'DAL', 'SEA', 'NO']
+2014: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['DEN', 'PIT', 'IND', 'BUF', 'KC', 'NE']
+	NFC Playoff Seeds: ['SEA', 'DET', 'ATL', 'PHI', 'AZ', 'SF']
+2015: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['KC', 'NE', 'HOU', 'CIN', 'BUF', 'NYJ']
+	NFC Playoff Seeds: ['AZ', 'CAR', 'WAS', 'MIN', 'LAR', 'SEA']
+2016: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'HOU', 'PIT', 'KC', 'LV', 'DEN']
+	NFC Playoff Seeds: ['ATL', 'AZ', 'GB', 'NYG', 'DAL', 'TB']
+2017: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'PIT', 'KC', 'TEN', 'JAC', 'LAC']
+	NFC Playoff Seeds: ['SEA', 'NO', 'PHI', 'DET', 'MIN', 'LAR']
+2018: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['KC', 'PIT', 'NE', 'HOU', 'LAC', 'CLE']
+	NFC Playoff Seeds: ['DAL', 'NO', 'CHI', 'LAR', 'SEA', 'MIN']
+2019: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['BAL', 'HOU', 'KC', 'NE', 'BUF', 'TEN']
+	NFC Playoff Seeds: ['SF', 'NO', 'PHI', 'GB', 'LAR', 'SEA']
+2020: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['BUF', 'LV', 'PIT', 'TEN', 'KC', 'MIA', 'NE']
+	NFC Playoff Seeds: ['NYG', 'SEA', 'GB', 'NO', 'WAS', 'PHI', 'DAL']
