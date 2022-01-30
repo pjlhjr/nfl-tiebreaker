@@ -56,6 +56,11 @@ for div in divisions:
     for team in div:
         team_division[team] = div
 
+trace_on = False
+def trace_print(msg):
+    if trace_on:
+        print(msg)
+
 # Returns 1 for a win, 0.5 for a tie, 0 for a lose.
 # Raises if an exception if the team did not play in the game.
 def game_result(game, team):
@@ -132,15 +137,27 @@ def get_conf_teams(teams):
 
     return conf_teams
 
+
+# Ok, having a better record really isn't a tiebreak per se.
+# You need to tie first, to break a tie.
+# But treating it as such makes things easiest.
+# Send your complaints to Rodger.
+def best_record_tiebreak(schedules, teams, tiebreaker_type):
+    team_records = {team: get_team_record(schedules[team], team) for team in teams}
+    trace_print(f"[ ] Team records: {team_records}")
+    return get_best_record(team_records)
+
 def head_to_head_tiebreak(schedules, teams, tiebreaker_type):
     teams, og_teams = teams.copy(), teams
 
     h2h_records = get_head_to_head_records(schedules, teams)
+    trace_print(f"[ ] Head-to-head records: {h2h_records}")
     if tiebreaker_type == 'wc':
         # For the Wild Card, only applied if one team beat every other team, or
         # if one team lost to every other team.
         for team in teams:
             if h2h_records[team] == len(teams) - 1:
+                trace_print(f"[ ] {team} beat all teams in {teams}")
                 return [team]
 
         # To state the obvious, only one team can lose against every 
@@ -152,10 +169,12 @@ def head_to_head_tiebreak(schedules, teams, tiebreaker_type):
         for team in teams:
             if h2h_records[team] == 0.0:
                 teams.remove(team)
+                trace_print(f"[ ] {team} lost to each of {teams}")
                 return teams
 
         # If no-team either won all or lost all games head-to-head,
         # then this step in not applicable.
+        trace_print(f"[ ] WildCard head-to-head did not chagne {teams}")
         return teams
     else:
         # For the division, best record in head-to-head always applies.
@@ -175,6 +194,7 @@ def div_tiebreak(schedules, teams, tiebreaker_type):
             raise Exception(f"Couldn't find division for {team}")
 
     # All teams have the same number of division games
+    trace_print(f"[ ] Div records: {div_records}")
     return get_best_record(div_records)
 
 def conf_tiebreak(schedules, teams, tiebreaker_type):
@@ -187,6 +207,7 @@ def conf_tiebreak(schedules, teams, tiebreaker_type):
     # Now, widdle it down to just the ones that we care about.
     tied_conf_records = {team: record for team, record in conf_records.items() if team in teams}
     # As with the division, all teams played the same number of conference games.
+    trace_print(f"[ ] Conf records: {tied_conf_records}")
     return get_best_record(tied_conf_records)
 
 def common_games_tiebreak(schedules, teams, tiebreak_type):
@@ -194,9 +215,12 @@ def common_games_tiebreak(schedules, teams, tiebreak_type):
     
     # Skip this tiebreak if less than minimum 4 common games (WC-only)
     if tiebreak_type == 'wc' and all([len(games) < 4 for games in common_games.values()]):
+        trace_print(f"[!] Common games tiebreak skipped in WC for {teams}")
         return teams
 
     common_records = {team: get_team_record(common_games[team], team) for team in teams}
+
+    trace_print(f"[ ] Common records: {common_records}")
     return get_best_record(common_records)
 
 def strength_of_victory_tiebreak(schedules, teams, tiebreak_type):
@@ -208,6 +232,7 @@ def strength_of_victory_tiebreak(schedules, teams, tiebreak_type):
                 beaten_opponent = get_game_opponent(game, team)
                 teams_sov[team] += get_team_record(schedules[beaten_opponent], beaten_opponent)
 
+    trace_print(f"[ ] SoV: {teams_sov}")
     return get_best_record(teams_sov)
 
 def strength_of_schedule_tiebreak(schedules, teams, tiebreak_type):
@@ -218,6 +243,7 @@ def strength_of_schedule_tiebreak(schedules, teams, tiebreak_type):
             opponent = get_game_opponent(game, team)
             teams_sos[team] += get_team_record(schedules[opponent], opponent)
 
+    trace_print(f"[ ] SoS: {teams_sov}")
     return get_best_record(teams_sos)
 
 # pointsFunc should be a function that takes (game, team),
@@ -252,6 +278,7 @@ def rank_teams(schedules, teams, pointsFunc):
             tied_score_idx = idx
         prev_score = score
 
+    trace_print(f"[ ] Ranking ({str(pointsDict)}): {ranking}\n\t{rankingDict}")
     return rankingDict
 
 def rank_teams_points_for(schedules, teams):
@@ -275,6 +302,7 @@ def conf_combined_ranking_tiebreak(schedules, teams, tiebreak_type):
         combined_ranks[team] = len(points_for_ranks) - points_for_ranks[team]
         combined_ranks[team] += len(points_against_ranks) - points_against_ranks[team]
 
+    trace_print(f"[ ] Conf combined rank: {combined_ranks}")
     return get_best_record(combined_ranks)
 
 def combined_ranking_tiebreak(schedules, teams, tiebreak_type):
@@ -290,6 +318,7 @@ def combined_ranking_tiebreak(schedules, teams, tiebreak_type):
         combined_ranks[team] = len(points_for_ranks) - points_for_ranks[team]
         combined_ranks[team] += len(points_against_ranks) - points_against_ranks[team]
 
+    trace_print(f"[ ] Combined rank: {combined_ranks}")
     return get_best_record(combined_ranks)
 
 # TODO It's common games, not conference games :(
@@ -307,6 +336,7 @@ def conf_net_points_tiebreak(schedules, teams, tiebreak_type):
                 else:
                     team_points[team] += game['PtsL'] - game['PtsW']
 
+    trace_print(f"[ ] Conf net points: {team_points}")
     return get_best_record(team_points)
 
 def net_points_tiebreak(schedules, teams, tiebreak_type):
@@ -320,6 +350,7 @@ def net_points_tiebreak(schedules, teams, tiebreak_type):
             else:
                 team_points[team] += game['PtsL'] - game['PtsW']
 
+    trace_print(f"[ ] Net points: {team_points}")
     return get_best_record(team_points)
 
 def net_touchdowns_tiebreak(schedules, teams, tiebreak_type):
@@ -329,15 +360,18 @@ def coin_toss_tiebreak(schedules, teams, tiebreak_type):
     raise NotImplemented("Coin-toss!?! Sigh, I was hoping that I could keep this deterministic/not have special handling of a corner case.")
 
 
-div_tiebreak_funcs = [head_to_head_tiebreak, div_tiebreak, common_games_tiebreak,\
-    conf_tiebreak, strength_of_victory_tiebreak, strength_of_schedule_tiebreak,\
-    conf_combined_ranking_tiebreak, combined_ranking_tiebreak, conf_net_points_tiebreak,\
-    net_points_tiebreak, net_touchdowns_tiebreak, coin_toss_tiebreak]
-
-wc_tiebreak_funcs = [head_to_head_tiebreak, conf_tiebreak, common_games_tiebreak,\
+div_tiebreak_funcs = [best_record_tiebreak, head_to_head_tiebreak,\
+    div_tiebreak, common_games_tiebreak, conf_tiebreak,\
     strength_of_victory_tiebreak, strength_of_schedule_tiebreak,\
-    conf_combined_ranking_tiebreak, combined_ranking_tiebreak, conf_net_points_tiebreak,\
-    net_points_tiebreak, net_touchdowns_tiebreak, coin_toss_tiebreak]
+    conf_combined_ranking_tiebreak, combined_ranking_tiebreak,\
+    conf_net_points_tiebreak, net_points_tiebreak, net_touchdowns_tiebreak,\
+    coin_toss_tiebreak]
+
+wc_tiebreak_funcs = [best_record_tiebreak, head_to_head_tiebreak,\
+    conf_tiebreak, common_games_tiebreak, strength_of_victory_tiebreak,\
+    strength_of_schedule_tiebreak, conf_combined_ranking_tiebreak,\
+    combined_ranking_tiebreak, conf_net_points_tiebreak, net_points_tiebreak,\
+    net_touchdowns_tiebreak, coin_toss_tiebreak]
 
 # TODO For WC b/w two teams in the same div, apply div procedure
 # See https://www.nfl.com/standings/tie-breaking-procedures
@@ -372,7 +406,9 @@ def get_best_team(schedules, teams, tiebreaker_type):
     assert len(teams) <= 4
     assert len(teams) > 0
     if len(teams) == 1:
-        return teams.pop()
+        team = teams.pop()
+        trace_print(f"[+] Only team ({team}) is best team, out of original {og_teams}")
+        return team
         
     # Chose which tiebreak steps to follow
     if tiebreaker_type == 'div':
@@ -387,9 +423,11 @@ def get_best_team(schedules, teams, tiebreaker_type):
 
         # If the tie-break has been resolved
         if len(remaining_teams) == 1:
+            trace_print(f"[+] {remaining_teams[0]} selected out of {og_teams} using {str(tiebreak_func.__name__)}")
             return remaining_teams[0]
         # If a team was eliminated, restart tiebreak from the beginning
         elif remaining_teams != teams:
+            trace_print(f"[-] {remaining_teams} remain out of {og_teams} using {str(tiebreak_func.__name__)}")
             return get_best_team(schedules, remaining_teams, tiebreaker_type)
         # If no changes in the teams, continue to the next tiebreaker
         else:
@@ -434,6 +472,8 @@ def get_seeds(schedules, conf, year):
 
     return seeds
 
+
+# Get a mapping from the name of column to its index number
 def get_header_indexes(header_row, wanted_columns):
     column_indexes = {}
 
@@ -445,35 +485,101 @@ def get_header_indexes(header_row, wanted_columns):
 
     return column_indexes
 
+# NOTE The "Playoffs" heading row should be removed from the CSV data
 # TODO Verify that games happen within expected timerange
 def load_year(year):
     games = []
+    playoff_games = []
     wanted_columns = ["Week", "Day", "Winner/tie", "Loser/tie", "PtsW", "PtsL"]
-    week_list = [str(week+1) for week in range(17)]
+    week_list = [str(week+1) for week in range(18 if year >= 2021 else 17)]
 
     with open(f'data/{year}.csv', 'r') as year_csv:
         csv_reader = csv.reader(year_csv)
 
         header_row = next(csv_reader)
         column_indexes = get_header_indexes(header_row, wanted_columns)
+
+        # The CSV denotes the home team by putting an "@" symbol between
+        # the Winner & Loser columns if the away team wins. Otherwise, the
+        # column is left empty. The "Winner/tie" column contains the home team
+        # in case of a tie. "N" is used for neutral site (i.e. the Super Bowl).
+        assert column_indexes["Winner/tie"] + 2 == column_indexes["Loser/tie"]
         for game_entry in csv_reader:
             game_dict = {}
             for column, idx in column_indexes.items():
-                # Only regular season games
-                if column == 'Week' and game_entry[idx] not in week_list:
-                    break
 
                 if column == "Winner/tie":
+                    if game_entry[idx+1] in ['', 'N']:
+                        assert 'Home' not in game_dict
+                        game_dict['Home'] = team_abbrev[game_entry[idx]]
+                    else:
+                        assert(game_entry[idx+1] == '@')
+
                     game_dict['Winner'] = team_abbrev[game_entry[idx]]
+
                 elif column == "Loser/tie":
+                    if game_entry[idx-1] == '@':
+                        assert 'Home' not in game_dict
+                        game_dict['Home'] = team_abbrev[game_entry[idx]]
+                    else:
+                        assert(game_entry[idx-1] in ['', 'N'])
+
                     game_dict['Loser'] = team_abbrev[game_entry[idx]]
+
                 else:
                     game_dict[column] = game_entry[idx]
-            else:
-                games.append(game_dict)
 
-   # TODO Load playoff games
-    return games
+            assert 'Home' in game_dict
+
+            # Only regular season games
+            if game_dict['Week'] in week_list:
+                games.append(game_dict)
+            else:
+                assert(game_dict['Week'] in ['WildCard', 'Division', 'ConfChamp', 'SuperBowl'])
+                playoff_games.append(game_dict)
+
+    return games, playoff_games
+
+
+# I could bring in another dataset here to get the actual seeding results,
+# but we can also just look at the games played (including who hosted the game).
+def verify_seeds(playoff_games, predicted_seeds):
+    # Treat a bye as a WC win
+    wc_winners = []
+    wc_matchups = [(3, 6), (4, 5)]
+    if len(predicted_seeds) == 7:
+        wc_matchups = (2, 7)
+        wc_winners.append(predicted_seeds[0])
+    else:
+        assert len(predicted_seeds) == 6
+        wc_winners += predicted_seeds[0:1]
+    
+    def verify_playoff_winner(home_team, away_team, playoff_round):
+        for game in playoff_games:
+            if game['Week'] != playoff_round:
+                continue
+
+            if game['Home'] == home_team:
+                assert home_team in [game['Winner'], game['Loser']]
+                assert away_team in [game['Winner'], game['Loser']]
+
+                return game['Winner']
+
+        raise Exception(f"{home_team} did not host {away_team} in the {playoff_round} round")
+
+    for home_seed, away_seed in wc_matchups:
+        home_team = predicted_seeds[home_seed-1]
+        away_team = predicted_seeds[away_seed-1]
+        wc_winners.append(verify_playoff_winner(home_team, away_team, 'WildCard'))
+
+    # Re-seed teams for divisional round.
+    assert len(wc_winners) == 4
+    wc_winners.sort(key=lambda team: predicted_seeds.index(team), reverse=True)
+    # Check the division games, but discard the winners as there's 
+    # no need to check the Conference Champion game.
+    verify_playoff_winner(wc_winners[0], wc_winners[3], 'Division')
+    verify_playoff_winner(wc_winners[1], wc_winners[2], 'Division')
+
 
 def list_teams(games):
     teams = set()
@@ -489,15 +595,23 @@ def team_schedules(games, year):
         assert len(schedules[team]) == 16 if year < 2021 else 17
     return schedules
 
+
 def main():
     for year in range(2002, 2021):
-        games = load_year(year)
+        games, playoff_games = load_year(year)
         schedules = team_schedules(games, year)
+        afc_seeds = get_seeds(schedules, 'AFC', year)
+        verify_seeds(playoff_games, afc_seeds)
+        nfc_seeds = get_seeds(schedules, 'NFC', year)
+        verify_seeds(playoff_games, nfc_seeds)
 
         print(f'{year}: Number of games, {len(games)}', end='; ')
         print("Teams, ", len(list_teams(games)))
-        print("\tAFC Playoff Seeds:", get_seeds(schedules, 'AFC', year))
-        print("\tNFC Playoff Seeds:", get_seeds(schedules, 'NFC', year))
+        print("\tAFC Playoff Seeds:", afc_seeds)
+        print("\tNFC Playoff Seeds:", )
 
 if __name__ == '__main__':
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == 'trace':
+        trace_on = True
     main()
