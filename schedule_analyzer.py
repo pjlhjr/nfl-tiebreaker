@@ -82,7 +82,7 @@ def get_game_opponent(game, team):
     return game['Winner'] if game['Winner'] != team else game['Loser']
 
 def get_all_opponents(schedules, team):
-    return map(lambda game: get_game_opponent(game, team), schedules[team])
+    return set(map(lambda game: get_game_opponent(game, team), schedules[team]))
 
 def get_common_games(schedules, teams):
     # First, need to get common opponents
@@ -90,14 +90,14 @@ def get_common_games(schedules, teams):
     for team in teams:
         opponents = get_all_opponents(schedules, team)
         if common_opponents is None:
-            common_opponents = set(opponents)
+            common_opponents = opponents
         else:
             common_opponents = common_opponents.intersection(opponents)
 
     # Then, we'll go back and get the games
     common_games = {}
     for team in teams:
-        common_games[team] = [game for game in schedules[team] if get_game_opponent(game, team) in common_games]
+        common_games[team] = [game for game in schedules[team] if get_game_opponent(game, team) in common_opponents]
 
     return common_games
 
@@ -154,7 +154,8 @@ def head_to_head_tiebreak(schedules, teams, tiebreaker_type):
     trace_print(f"[ ] Head-to-head records: {h2h_records}")
     if tiebreaker_type == 'wc':
         # For the Wild Card, only applied if one team beat every other team, or
-        # if one team lost to every other team.
+        # if one team lost to every other team. For Wild Card opponents, each
+        # pair of teams can meet at most once.
         for team in teams:
             if h2h_records[team] == len(teams) - 1:
                 trace_print(f"[ ] {team} beat all teams in {teams}")
@@ -167,10 +168,14 @@ def head_to_head_tiebreak(schedules, teams, tiebreaker_type):
         # In the case where one team goes undefeated (head-to-head) at the same time
         # that another goes winless, the undefeated wins this tiebreak.
         for team in teams:
-            if h2h_records[team] == 0.0:
-                teams.remove(team)
-                trace_print(f"[ ] {team} lost to each of {teams}")
-                return teams
+            # The team was winless head-to-head...
+            if h2h_records[team] == 0.0: 
+                opponents = get_all_opponents(schedules, team)
+                # ...and the team played all other teams in the season.
+                if all([opp in opponents for opp in teams if opp != team]):
+                    teams.remove(team)
+                    trace_print(f"[ ] {team} lost to each of {teams}")
+                    return teams
 
         # If no-team either won all or lost all games head-to-head,
         # then this step in not applicable.
@@ -210,6 +215,7 @@ def conf_tiebreak(schedules, teams, tiebreaker_type):
     trace_print(f"[ ] Conf records: {tied_conf_records}")
     return get_best_record(tied_conf_records)
 
+# TODO Might be possible to have a different number of common games. This would break in that case.
 def common_games_tiebreak(schedules, teams, tiebreak_type):
     common_games = get_common_games(schedules, teams)
     
@@ -445,13 +451,14 @@ def get_seeds(schedules, conf, year):
         if not div.startswith(conf):
             continue
         div_champs.append(get_best_team(schedules, teams, 'div'))
+        trace_print(f"[*] {div_champs[-1]} won the {div}")
         remaining_teams += [team for team in teams if team != div_champs[-1]]
     assert len(div_champs) == 4
     assert len(remaining_teams) == 12
 
     # Seed div champs
     remaining_div_champs = div_champs.copy()
-    for _ in range(len(remaining_div_champs)):
+    for seed_idx in range(len(remaining_div_champs)):
         # The NFL Tiebreaking Procedures specify that the Wild Card
         # tiebreaking procedures should be applied to determine home
         # field advantage between division winnners.
@@ -459,6 +466,7 @@ def get_seeds(schedules, conf, year):
         # They also specify that only one team advances on any given
         # tie-breaking step. Remaining teams revert to the first step.
         seeds.append(get_best_team(schedules, remaining_div_champs, 'wc'))
+        trace_print(f"[*] Selected {seeds[-1]} as #{seed_idx+1} seed")
         remaining_div_champs.remove(seeds[-1])
     assert len(remaining_div_champs) == 0
     assert len(seeds) == 4
@@ -467,6 +475,7 @@ def get_seeds(schedules, conf, year):
     num_wcs = 2 if year < 2020 else 3
     for wc_num in range(num_wcs):
         seeds.append(get_best_team(schedules, remaining_teams, 'wc'))
+        trace_print(f"[*] Selected {seeds[-1]} as #{wc_num+1} WC / #{len(seeds)} seed")
         remaining_teams.remove(seeds[-1])
     assert len(seeds) + len(remaining_teams) == 16
 
@@ -548,11 +557,11 @@ def verify_seeds(playoff_games, predicted_seeds):
     wc_winners = []
     wc_matchups = [(3, 6), (4, 5)]
     if len(predicted_seeds) == 7:
-        wc_matchups = (2, 7)
+        wc_matchups.append((2, 7))
         wc_winners.append(predicted_seeds[0])
     else:
         assert len(predicted_seeds) == 6
-        wc_winners += predicted_seeds[0:1]
+        wc_winners += predicted_seeds[0:2]
     
     def verify_playoff_winner(home_team, away_team, playoff_round):
         for game in playoff_games:
@@ -574,7 +583,7 @@ def verify_seeds(playoff_games, predicted_seeds):
 
     # Re-seed teams for divisional round.
     assert len(wc_winners) == 4
-    wc_winners.sort(key=lambda team: predicted_seeds.index(team), reverse=True)
+    wc_winners.sort(key=lambda team: predicted_seeds.index(team))
     # Check the division games, but discard the winners as there's 
     # no need to check the Conference Champion game.
     verify_playoff_winner(wc_winners[0], wc_winners[3], 'Division')
@@ -608,7 +617,7 @@ def main():
         print(f'{year}: Number of games, {len(games)}', end='; ')
         print("Teams, ", len(list_teams(games)))
         print("\tAFC Playoff Seeds:", afc_seeds)
-        print("\tNFC Playoff Seeds:", )
+        print("\tNFC Playoff Seeds:", nfc_seeds)
 
 if __name__ == '__main__':
     import sys
