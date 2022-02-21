@@ -1,0 +1,113 @@
+2002: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['LV', 'TEN', 'PIT', 'NYJ', 'IND', 'CLE']
+	NFC Playoff Seeds: ['PHI', 'TB', 'GB', 'SF', 'NYG', 'ATL']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'CHI', 'DET'], 'NFCE': ['PHI', 'NYG', 'WAS', 'DAL'], 'NFCS': ['TB', 'ATL', 'NO', 'CAR'], 'NFCW': ['SF', 'LAR', 'SEA', 'AZ'], 'AFCN': ['PIT', 'CLE', 'BAL', 'CIN'], 'AFCE': ['NYJ', 'NE', 'MIA', 'BUF'], 'AFCS': ['TEN', 'IND', 'JAC', 'HOU'], 'AFCW': ['LV', 'DEN', 'LAC', 'KC']}
+2003: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'KC', 'IND', 'BAL', 'TEN', 'DEN']
+No rank AFC Playoff Seeds: ['NE', 'IND', 'KC', 'BAL', 'TEN', 'DEN']
+	NFC Playoff Seeds: ['PHI', 'LAR', 'CAR', 'GB', 'SEA', 'DAL']
+No rank NFC Playoff Seeds: ['PHI', 'LAR', 'CAR', 'GB', 'SEA', 'MIN']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'CHI', 'DET'], 'NFCE': ['PHI', 'DAL', 'WAS', 'NYG'], 'NFCS': ['CAR', 'NO', 'TB', 'ATL'], 'NFCW': ['LAR', 'SEA', 'SF', 'AZ'], 'AFCN': ['BAL', 'CIN', 'PIT', 'CLE'], 'AFCE': ['NE', 'MIA', 'BUF', 'NYJ'], 'AFCS': ['IND', 'TEN', 'JAC', 'HOU'], 'AFCW': ['KC', 'DEN', 'LV', 'LAC']}
+2004: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['PIT', 'NE', 'IND', 'LAC', 'NYJ', 'DEN']
+No rank AFC Playoff Seeds: ['PIT', 'NE', 'IND', 'LAC', 'DEN', 'BAL']
+	NFC Playoff Seeds: ['PHI', 'ATL', 'GB', 'SEA', 'LAR', 'MIN']
+No rank NFC Playoff Seeds: ['PHI', 'ATL', 'GB', 'SEA', 'CAR', 'LAR']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'DET', 'CHI'], 'NFCE': ['PHI', 'NYG', 'DAL', 'WAS'], 'NFCS': ['ATL', 'NO', 'CAR', 'TB'], 'NFCW': ['SEA', 'LAR', 'AZ', 'SF'], 'AFCN': ['PIT', 'BAL', 'CIN', 'CLE'], 'AFCE': ['NE', 'NYJ', 'BUF', 'MIA'], 'AFCS': ['IND', 'JAC', 'HOU', 'TEN'], 'AFCW': ['LAC', 'DEN', 'KC', 'LV']}
+2005: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['IND', 'DEN', 'CIN', 'NE', 'JAC', 'PIT']
+	NFC Playoff Seeds: ['SEA', 'CHI', 'TB', 'NYG', 'CAR', 'WAS']
+	Division rankings: {'NFCN': ['CHI', 'MIN', 'DET', 'GB'], 'NFCE': ['NYG', 'WAS', 'DAL', 'PHI'], 'NFCS': ['TB', 'CAR', 'ATL', 'NO'], 'NFCW': ['SEA', 'LAR', 'AZ', 'SF'], 'AFCN': ['CIN', 'PIT', 'BAL', 'CLE'], 'AFCE': ['NE', 'MIA', 'BUF', 'NYJ'], 'AFCS': ['IND', 'JAC', 'TEN', 'HOU'], 'AFCW': ['DEN', 'KC', 'LAC', 'LV']}
+2006: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['LAC', 'BAL', 'IND', 'NE', 'NYJ', 'KC']
+No rank AFC Playoff Seeds: ['LAC', 'BAL', 'NE', 'IND', 'NYJ', 'CIN']
+	NFC Playoff Seeds: ['CHI', 'NO', 'PHI', 'SEA', 'DAL', 'NYG']
+No rank NFC Playoff Seeds: ['CHI', 'NO', 'PHI', 'SF', 'NYG', 'GB']
+	Division rankings: {'NFCN': ['CHI', 'GB', 'MIN', 'DET'], 'NFCE': ['PHI', 'DAL', 'NYG', 'WAS'], 'NFCS': ['NO', 'CAR', 'ATL', 'TB'], 'NFCW': ['SEA', 'LAR', 'SF', 'AZ'], 'AFCN': ['BAL', 'CIN', 'PIT', 'CLE'], 'AFCE': ['NE', 'NYJ', 'BUF', 'MIA'], 'AFCS': ['IND', 'TEN', 'JAC', 'HOU'], 'AFCW': ['LAC', 'KC', 'DEN', 'LV']}
+2007: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'IND', 'LAC', 'PIT', 'JAC', 'TEN']
+No rank AFC Playoff Seeds: ['NE', 'IND', 'LAC', 'PIT', 'TEN', 'JAC']
+	NFC Playoff Seeds: ['DAL', 'GB', 'SEA', 'TB', 'NYG', 'WAS']
+No rank NFC Playoff Seeds: ['DAL', 'GB', 'SEA', 'TB', 'WAS', 'NYG']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'DET', 'CHI'], 'NFCE': ['DAL', 'NYG', 'WAS', 'PHI'], 'NFCS': ['TB', 'CAR', 'NO', 'ATL'], 'NFCW': ['SEA', 'AZ', 'SF', 'LAR'], 'AFCN': ['PIT', 'CLE', 'CIN', 'BAL'], 'AFCE': ['NE', 'BUF', 'NYJ', 'MIA'], 'AFCS': ['IND', 'JAC', 'TEN', 'HOU'], 'AFCW': ['LAC', 'DEN', 'KC', 'LV']}
+2008: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['TEN', 'PIT', 'MIA', 'LAC', 'IND', 'BAL']
+No rank AFC Playoff Seeds: ['TEN', 'MIA', 'PIT', 'LAC', 'NE', 'IND']
+	NFC Playoff Seeds: ['NYG', 'CAR', 'MIN', 'AZ', 'ATL', 'PHI']
+No rank NFC Playoff Seeds: ['NYG', 'CAR', 'AZ', 'MIN', 'ATL', 'PHI']
+	Division rankings: {'NFCN': ['MIN', 'CHI', 'GB', 'DET'], 'NFCE': ['NYG', 'PHI', 'DAL', 'WAS'], 'NFCS': ['CAR', 'ATL', 'TB', 'NO'], 'NFCW': ['AZ', 'SF', 'SEA', 'LAR'], 'AFCN': ['PIT', 'BAL', 'CIN', 'CLE'], 'AFCE': ['MIA', 'NE', 'NYJ', 'BUF'], 'AFCS': ['TEN', 'IND', 'HOU', 'JAC'], 'AFCW': ['LAC', 'DEN', 'LV', 'KC']}
+2009: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['IND', 'LAC', 'NE', 'CIN', 'NYJ', 'BAL']
+No rank AFC Playoff Seeds: ['IND', 'LAC', 'CIN', 'NE', 'BAL', 'TEN']
+	NFC Playoff Seeds: ['NO', 'MIN', 'DAL', 'AZ', 'GB', 'PHI']
+No rank NFC Playoff Seeds: ['MIN', 'NO', 'DAL', 'AZ', 'GB', 'PHI']
+	Division rankings: {'NFCN': ['MIN', 'GB', 'CHI', 'DET'], 'NFCE': ['DAL', 'PHI', 'NYG', 'WAS'], 'NFCS': ['NO', 'ATL', 'CAR', 'TB'], 'NFCW': ['AZ', 'SF', 'SEA', 'LAR'], 'AFCN': ['CIN', 'BAL', 'PIT', 'CLE'], 'AFCE': ['NE', 'NYJ', 'MIA', 'BUF'], 'AFCS': ['IND', 'HOU', 'TEN', 'JAC'], 'AFCW': ['LAC', 'DEN', 'LV', 'KC']}
+2010: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'PIT', 'IND', 'KC', 'BAL', 'NYJ']
+No rank AFC Playoff Seeds: ['NE', 'PIT', 'LAC', 'IND', 'BAL', 'NYJ']
+	NFC Playoff Seeds: ['ATL', 'CHI', 'PHI', 'SEA', 'NO', 'GB']
+No rank NFC Playoff Seeds: ['ATL', 'CHI', 'PHI', 'SEA', 'GB', 'NO']
+	Division rankings: {'NFCN': ['CHI', 'GB', 'DET', 'MIN'], 'NFCE': ['PHI', 'NYG', 'DAL', 'WAS'], 'NFCS': ['ATL', 'NO', 'TB', 'CAR'], 'NFCW': ['SEA', 'LAR', 'SF', 'AZ'], 'AFCN': ['PIT', 'BAL', 'CLE', 'CIN'], 'AFCE': ['NE', 'NYJ', 'MIA', 'BUF'], 'AFCS': ['IND', 'JAC', 'HOU', 'TEN'], 'AFCW': ['KC', 'LAC', 'LV', 'DEN']}
+2011: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'BAL', 'HOU', 'DEN', 'PIT', 'CIN']
+	NFC Playoff Seeds: ['GB', 'SF', 'NO', 'NYG', 'ATL', 'DET']
+No rank NFC Playoff Seeds: ['GB', 'NO', 'SF', 'NYG', 'DET', 'PHI']
+	Division rankings: {'NFCN': ['GB', 'DET', 'CHI', 'MIN'], 'NFCE': ['NYG', 'PHI', 'DAL', 'WAS'], 'NFCS': ['NO', 'ATL', 'CAR', 'TB'], 'NFCW': ['SF', 'AZ', 'SEA', 'LAR'], 'AFCN': ['BAL', 'PIT', 'CIN', 'CLE'], 'AFCE': ['NE', 'NYJ', 'MIA', 'BUF'], 'AFCS': ['HOU', 'TEN', 'JAC', 'IND'], 'AFCW': ['DEN', 'LAC', 'LV', 'KC']}
+2012: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['DEN', 'NE', 'HOU', 'BAL', 'IND', 'CIN']
+	NFC Playoff Seeds: ['ATL', 'SF', 'GB', 'WAS', 'SEA', 'MIN']
+No rank NFC Playoff Seeds: ['ATL', 'SF', 'GB', 'WAS', 'MIN', 'SEA']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'CHI', 'DET'], 'NFCE': ['WAS', 'NYG', 'DAL', 'PHI'], 'NFCS': ['ATL', 'CAR', 'NO', 'TB'], 'NFCW': ['SF', 'SEA', 'LAR', 'AZ'], 'AFCN': ['BAL', 'CIN', 'PIT', 'CLE'], 'AFCE': ['NE', 'MIA', 'NYJ', 'BUF'], 'AFCS': ['HOU', 'IND', 'TEN', 'JAC'], 'AFCW': ['DEN', 'LAC', 'LV', 'KC']}
+2013: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['DEN', 'NE', 'CIN', 'IND', 'KC', 'LAC']
+No rank AFC Playoff Seeds: ['DEN', 'IND', 'NE', 'CIN', 'LAC', 'KC']
+	NFC Playoff Seeds: ['SEA', 'CAR', 'PHI', 'GB', 'SF', 'NO']
+No rank NFC Playoff Seeds: ['SEA', 'CAR', 'PHI', 'CHI', 'SF', 'NO']
+	Division rankings: {'NFCN': ['GB', 'CHI', 'DET', 'MIN'], 'NFCE': ['PHI', 'DAL', 'NYG', 'WAS'], 'NFCS': ['CAR', 'NO', 'ATL', 'TB'], 'NFCW': ['SEA', 'SF', 'AZ', 'LAR'], 'AFCN': ['CIN', 'PIT', 'BAL', 'CLE'], 'AFCE': ['NE', 'NYJ', 'MIA', 'BUF'], 'AFCS': ['IND', 'TEN', 'JAC', 'HOU'], 'AFCW': ['DEN', 'KC', 'LAC', 'LV']}
+2014: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'DEN', 'PIT', 'IND', 'CIN', 'BAL']
+No rank AFC Playoff Seeds: ['DEN', 'IND', 'PIT', 'NE', 'CIN', 'KC']
+	NFC Playoff Seeds: ['SEA', 'GB', 'DAL', 'CAR', 'AZ', 'DET']
+No rank NFC Playoff Seeds: ['GB', 'DAL', 'SEA', 'CAR', 'DET', 'AZ']
+	Division rankings: {'NFCN': ['GB', 'DET', 'MIN', 'CHI'], 'NFCE': ['DAL', 'PHI', 'NYG', 'WAS'], 'NFCS': ['CAR', 'NO', 'ATL', 'TB'], 'NFCW': ['SEA', 'AZ', 'SF', 'LAR'], 'AFCN': ['PIT', 'CIN', 'BAL', 'CLE'], 'AFCE': ['NE', 'BUF', 'MIA', 'NYJ'], 'AFCS': ['IND', 'HOU', 'JAC', 'TEN'], 'AFCW': ['DEN', 'KC', 'LAC', 'LV']}
+2015: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['DEN', 'NE', 'CIN', 'HOU', 'KC', 'PIT']
+No rank AFC Playoff Seeds: ['NE', 'DEN', 'CIN', 'HOU', 'KC', 'PIT']
+	NFC Playoff Seeds: ['CAR', 'AZ', 'MIN', 'WAS', 'GB', 'SEA']
+	Division rankings: {'NFCN': ['MIN', 'GB', 'DET', 'CHI'], 'NFCE': ['WAS', 'PHI', 'NYG', 'DAL'], 'NFCS': ['CAR', 'ATL', 'NO', 'TB'], 'NFCW': ['AZ', 'SEA', 'LAR', 'SF'], 'AFCN': ['CIN', 'PIT', 'BAL', 'CLE'], 'AFCE': ['NE', 'NYJ', 'BUF', 'MIA'], 'AFCS': ['HOU', 'IND', 'JAC', 'TEN'], 'AFCW': ['DEN', 'KC', 'LV', 'LAC']}
+2016: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'KC', 'PIT', 'HOU', 'LV', 'MIA']
+	NFC Playoff Seeds: ['DAL', 'ATL', 'SEA', 'GB', 'NYG', 'DET']
+No rank NFC Playoff Seeds: ['DAL', 'ATL', 'SEA', 'GB', 'NYG', 'WAS']
+	Division rankings: {'NFCN': ['GB', 'DET', 'MIN', 'CHI'], 'NFCE': ['DAL', 'NYG', 'WAS', 'PHI'], 'NFCS': ['ATL', 'TB', 'NO', 'CAR'], 'NFCW': ['SEA', 'AZ', 'LAR', 'SF'], 'AFCN': ['PIT', 'BAL', 'CIN', 'CLE'], 'AFCE': ['NE', 'MIA', 'BUF', 'NYJ'], 'AFCS': ['HOU', 'TEN', 'IND', 'JAC'], 'AFCW': ['KC', 'LV', 'DEN', 'LAC']}
+2017: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['NE', 'PIT', 'JAC', 'KC', 'TEN', 'BUF']
+No rank AFC Playoff Seeds: ['PIT', 'NE', 'TEN', 'KC', 'JAC', 'LAC']
+	NFC Playoff Seeds: ['PHI', 'MIN', 'LAR', 'NO', 'CAR', 'ATL']
+No rank NFC Playoff Seeds: ['PHI', 'MIN', 'NO', 'LAR', 'CAR', 'SEA']
+	Division rankings: {'NFCN': ['MIN', 'DET', 'GB', 'CHI'], 'NFCE': ['PHI', 'DAL', 'WAS', 'NYG'], 'NFCS': ['NO', 'CAR', 'ATL', 'TB'], 'NFCW': ['LAR', 'SEA', 'AZ', 'SF'], 'AFCN': ['PIT', 'BAL', 'CIN', 'CLE'], 'AFCE': ['NE', 'BUF', 'MIA', 'NYJ'], 'AFCS': ['JAC', 'TEN', 'IND', 'HOU'], 'AFCW': ['KC', 'LAC', 'LV', 'DEN']}
+2018: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['KC', 'NE', 'HOU', 'BAL', 'LAC', 'IND']
+No rank AFC Playoff Seeds: ['KC', 'NE', 'IND', 'BAL', 'LAC', 'HOU']
+	NFC Playoff Seeds: ['NO', 'LAR', 'CHI', 'DAL', 'SEA', 'PHI']
+No rank NFC Playoff Seeds: ['LAR', 'CHI', 'NO', 'DAL', 'SEA', 'PHI']
+	Division rankings: {'NFCN': ['CHI', 'MIN', 'GB', 'DET'], 'NFCE': ['DAL', 'PHI', 'WAS', 'NYG'], 'NFCS': ['NO', 'ATL', 'CAR', 'TB'], 'NFCW': ['LAR', 'SEA', 'SF', 'AZ'], 'AFCN': ['BAL', 'PIT', 'CLE', 'CIN'], 'AFCE': ['NE', 'MIA', 'BUF', 'NYJ'], 'AFCS': ['HOU', 'IND', 'TEN', 'JAC'], 'AFCW': ['KC', 'LAC', 'DEN', 'LV']}
+2019: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['BAL', 'KC', 'NE', 'HOU', 'BUF', 'TEN']
+No rank AFC Playoff Seeds: ['BAL', 'NE', 'KC', 'HOU', 'TEN', 'BUF']
+	NFC Playoff Seeds: ['SF', 'GB', 'NO', 'PHI', 'SEA', 'MIN']
+No rank NFC Playoff Seeds: ['GB', 'SF', 'NO', 'PHI', 'SEA', 'MIN']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'CHI', 'DET'], 'NFCE': ['PHI', 'DAL', 'NYG', 'WAS'], 'NFCS': ['NO', 'ATL', 'TB', 'CAR'], 'NFCW': ['SF', 'SEA', 'LAR', 'AZ'], 'AFCN': ['BAL', 'PIT', 'CLE', 'CIN'], 'AFCE': ['NE', 'BUF', 'NYJ', 'MIA'], 'AFCS': ['HOU', 'TEN', 'IND', 'JAC'], 'AFCW': ['KC', 'DEN', 'LV', 'LAC']}
+2020: Number of games, 256; Teams,  32
+	AFC Playoff Seeds: ['KC', 'BUF', 'PIT', 'TEN', 'BAL', 'CLE', 'IND']
+	NFC Playoff Seeds: ['GB', 'NO', 'SEA', 'WAS', 'TB', 'LAR', 'CHI']
+No rank NFC Playoff Seeds: ['GB', 'NO', 'SEA', 'WAS', 'TB', 'LAR', 'AZ']
+	Division rankings: {'NFCN': ['GB', 'CHI', 'MIN', 'DET'], 'NFCE': ['WAS', 'NYG', 'DAL', 'PHI'], 'NFCS': ['NO', 'TB', 'CAR', 'ATL'], 'NFCW': ['SEA', 'LAR', 'AZ', 'SF'], 'AFCN': ['PIT', 'BAL', 'CLE', 'CIN'], 'AFCE': ['BUF', 'MIA', 'NE', 'NYJ'], 'AFCS': ['TEN', 'IND', 'HOU', 'JAC'], 'AFCW': ['KC', 'LV', 'LAC', 'DEN']}
+2021: Number of games, 272; Teams,  32
+	AFC Playoff Seeds: ['TEN', 'KC', 'BUF', 'CIN', 'LV', 'NE', 'PIT']
+No 17th AFC Playoff Seeds: ['TEN', 'KC', 'CIN', 'BUF', 'LV', 'NE', 'IND']
+No rank AFC Playoff Seeds: ['KC', 'TEN', 'CIN', 'BUF', 'IND', 'LAC', 'LV']
+	NFC Playoff Seeds: ['GB', 'TB', 'DAL', 'LAR', 'AZ', 'SF', 'PHI']
+No 17th NFC Playoff Seeds: ['GB', 'TB', 'DAL', 'LAR', 'AZ', 'NO', 'SF']
+No rank NFC Playoff Seeds: ['GB', 'TB', 'DAL', 'AZ', 'LAR', 'PHI', 'NO']
+	Division rankings: {'NFCN': ['GB', 'MIN', 'CHI', 'DET'], 'NFCE': ['DAL', 'PHI', 'WAS', 'NYG'], 'NFCS': ['TB', 'NO', 'ATL', 'CAR'], 'NFCW': ['LAR', 'AZ', 'SF', 'SEA'], 'AFCN': ['CIN', 'PIT', 'CLE', 'BAL'], 'AFCE': ['BUF', 'NE', 'MIA', 'NYJ'], 'AFCS': ['TEN', 'IND', 'HOU', 'JAC'], 'AFCW': ['KC', 'LV', 'LAC', 'DEN']}
